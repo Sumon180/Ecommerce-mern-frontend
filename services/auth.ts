@@ -16,7 +16,7 @@ export interface AuthState {
 export const authService = {
   login: async (email: string, password: string): Promise<User | null> => {
     try {
-      const response = await axios.post("/api/login", { email, password });
+      const response = await axios.post("/api/auth/login", { email, password });
       const { user } = response.data.payload;
       return user;
     } catch (error) {
